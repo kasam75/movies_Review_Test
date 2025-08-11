@@ -1,4 +1,7 @@
 package spring.test_2.repository;
 
-public interface MovieRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import spring.test_2.entity.Movie;
+
+public interface MovieRepository extends JpaRepository<Movie,Long> {
 }
