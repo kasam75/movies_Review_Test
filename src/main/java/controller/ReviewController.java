@@ -30,22 +30,22 @@ public class ReviewController {
 
     @GetMapping("/review/{reviewId}")
     public ResponseEntity<ReviewResponse>
-    getReview(@PathVariable Long moviesId) {
-        return reviewService.findReview(moviesId);
+    getReview(@PathVariable Long reviewId) {
+        return reviewService.findReview(reviewId);
     }
 
     @PutMapping("/reviews/{review}")
     public ResponseEntity<ReviewResponse>
     updateReview(
-            @PathVariable Long moviesId,
+            @PathVariable Long review,
             @RequestBody ReviewRequest reviewRequest) {
-        return reviewService.update(moviesId, reviewRequest);
+        return reviewService.update(review, reviewRequest);
     }
 
     @DeleteMapping("/review/{reviewId}")
     public void deleteReview(
-            @PathVariable Long moviesId
+            @PathVariable Long reviewId
     ) {
-        reviewService.deleteReview(moviesId);
+        reviewService.deleteReview(reviewId);
     }
 }

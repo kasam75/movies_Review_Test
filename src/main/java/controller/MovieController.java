@@ -14,7 +14,7 @@ import java.util.List;
 public class MovieController {
     private final MovieService movieService;
 
-    @PostMapping("/Movies")
+    @PostMapping("/movies")
     public ResponseEntity<MovieResponse> saveMovie
             (@RequestBody MovieRequest request) {
         return ResponseEntity.ok(movieService.save(request));
